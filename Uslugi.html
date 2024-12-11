@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySite3</title>
+    <link rel="icon" href="https://a.d-cd.net/XmtPdFb25hEB7iT9G2Qul-LzHz8-960.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .modal { 
+            display: none;/* Скрываем модальное окно по умолчанию */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;     
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0); /* Черный фон */
+            background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+        } 
+ 
+        .modal-content {
+            background-color: #fefefe; 
+            margin: 15% auto; /* Центрируем модальное окно */
+            padding: 20px;
+            border: 1px solid #888; 
+            width: 80%; /* Ширина модального окна */ 
+        } 
+ 
+        .close { 
+            color: #aaa; /* Цвет кнопки закрытия */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        } 
+ 
+        .close:hover,
+
+        .close:focus { 
+            color: black;
+            text-decoration: none;
+            cursor: pointer; 
+        } 
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="cap" id="cap">
+            <div>
+                <img src="https://a.d-cd.net/XmtPdFb25hEB7iT9G2Qul-LzHz8-960.jpg" alt="error" class="logo">
+            </div>
+            <div>
+                <p class="cap_text">Группа<u>ЭФБО-05-23</u></p>
+                <p style="padding-bottom: 10px;" class="cap_text">Солодкин Максим Дмитриевич</p>
+            </div>
+        </div>
+        <div class="navigation_menu">
+            <p class="navigation_menu_text">
+                <a href="MainPage.html">Главная</a>
+                <a href="FirstTerm.html">Первый&ensp;Семестр</a>
+                Второй&ensp;Семестр
+                Услуги
+                Авторизация
+            </p>
+        </div>
+        <div style="display: flex;">
+            <div class="aside uslugi_border">
+                <p class="aside_text_main">Навигация по странице</p>
+                <div class="aside_text">
+                    <a href="#Front">Фронтенд</a>
+                </div>
+                <div class="aside_text">
+                    <a href="#Back">Бэкенд</a>
+                </div>
+            </div>
+            <div class="main uslugi_border">
+                <div class="carts">
+                    <figure class="cart">
+                        <img src="https://a.d-cd.net/XmtPdFb25hEB7iT9G2Qul-LzHz8-960.jpg" class="cart_img">
+                        <div class="cart_border">
+                            <figcaption class="cart_text">
+                                Сайт-визитка
+                                <div>
+                                    <button class="openModal glow-on-hover">Заказать</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </figure>
+                    <figure class="cart">
+                        <img src="https://a.d-cd.net/XmtPdFb25hEB7iT9G2Qul-LzHz8-960.jpg" class="cart_img">
+                        <div class="cart_border">
+                            <figcaption class="cart_text">
+                                Корпоративный сайт
+                                <div>
+                                    <button class="openModal glow-on-hover">Заказать</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </figure>
+                    <figure class="cart">
+                        <img src="https://a.d-cd.net/XmtPdFb25hEB7iT9G2Qul-LzHz8-960.jpg" class="cart_img">
+                        <div class="cart_border">
+                            <figcaption class="cart_text">
+                                Интернет магазин
+                                <div>
+                                    <button class="openModal glow-on-hover">Заказать</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="my_form_main">
+                        <span class="close">&times;</span>
+                        <h2 style="padding-top: 80px;">Разработка веб-приложения</h2>
+                        <p>Заполните форму и мы обязательно свяжися с вами в ближайшее время для уточнения деталей</p>
+                        <form id="myForm">
+                            <div style="display: flex;">
+                                <div class="my_form_text">
+                                    <div>Как вас зовут</div>
+                                    <div>Ваш e-mail</div>
+                                    <div>Телефон</div>
+                                    <div>Страна</div>
+                                    <div>Дата</div>
+                                    <div>Комментарий</div>
+                                </div>
+                                <div class="my_form_main_2">
+                                    <label class="my_form_label" style="padding-top: 0px;">
+                                        <input id="name" class="my_form_input" type="text" placeholder="Иванов Иван Иваныч" required>
+                                    </label>
+                                    <label class="my_form_label">
+                                        <input id="email" class="my_form_input" type="email" placeholder="test@gmail.com" required>
+                                    </label>
+                                    <label class="my_form_label">
+                                        <input id="phone" class="my_form_input" type="tel" placeholder="+7 999 999 99 99" required>
+                                    </label>
+                                    <label class="my_form_label">
+                                        <select class="my_form_select" name="Country" id="Country" required>
+                                            <option value="Russia">Россия</option>
+                                            <option value="USA">Америка</option>
+                                            <option value="Mexico">Мексика</option>
+                                        </select>
+                                    </label>
+                                    <label class="my_form_label">
+                                        <input id="date" class="my_form_select" type="date" required>
+                                    </label>
+                                    <label class="my_form_label">
+                                        <input id="comment" class="my_form_input" type="text"></input>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" required>
+                                <label for="html">Согласен на обработку моих персональных данных</label>
+                                <p><button type="submit" class="openModal glow-on-hover">Отправить</button></p>
+                            </div>
+                        </form>
+                        <div id="successMessage" class="my_form_success">Форма успешно отправлена!</div>
+                    </div>
+                </div>
+                <script src="main.js"></script>
+                <h3>Фронтенд</h3>
+                <p id="Front">Фронтенд (или клиентская часть) - это то, что видит пользователь. Он включает в себя все
+                    визуальные элементы
+                    <br>веб-сайта или приложения: кнопки, формы, изображения и текст. Фронтенд разработчики используют
+                    языки
+                    разметки
+                    <br>и стилизации, такие как HTML, CSS и JavaScript, чтобы создавать интерактивные и привлекательные
+                    интерфейсы.
+                    <br>Основная задача фронтенда - обеспечить удобство использования и эстетическую привлекательность
+                </p>
+                <h3>Бэкенд</h3>
+                <p id="Back">Бэкенд (или серверная часть) - это "за кулисами" веб-приложения. Он отвечает за обработку
+                    данных,
+                    управление
+                    <br>пользователями и взаимодействие с базами данных. Бэкенд разработчики используют языки
+                    программирования,
+                    такие
+                    <br>как Python, Ruby, Java или PHP, а также фреймворки и базы данных для создания логики приложения.
+                    <br>Основная задача бэкенда - обеспечить стабильную работу приложения и безопасность данных.
+                </p>
+                <a href="#cap"><div class="btn-up"></div></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="footer_text">©Солодкин Максим Дмитриевич, 2024</p>
+        <div style="margin-left: auto;">
+            <img src="https://f.nodacdn.net/580115" alt="error" class="footer_img">
+            <img src="https://sch141s.mskobr.ru/files/foto/vk.jpg" alt="error" class="footer_img">
+        </div>
+    </footer>
+</body>
+
+</html>
